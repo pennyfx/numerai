@@ -2,13 +2,32 @@ import os
 import subprocess
 import json
 import re
+import numpy as np
+import pandas as pd
+import pickle
+import xgboost as xgb
 from flask import Flask, request, jsonify
 # from inspect import getmembers, isfunction
 
 def add(params):
     return params['a'] + params['b']
 
-functions_list = [add]
+def predict(params):
+    model_filename = os.path.join(os.environ['INPUT_SNAPSHOT_DIR'],'model.dat')
+    # load model from file
+    loaded_model = pickle.load(open(model_filename, "rb"))
+    X = params 
+    x_test = pd.DataFrame(X)
+    # only used for final model with trained with lesser dimensions
+    feature_list = ['feature10','feature15','feature16','feature19','feature20','feature21',
+     'feature4','feature6','feature7','feature8','feature9']
+    x_test = x_test[feature_list]
+    y_pred = loaded_model.predict(x_test)
+    y_pred[y_pred > 0.5] = 1
+    y_pred[y_pred <= 0.5] = 0
+    return int(y_pred[0])
+
+functions_list = [add, predict]
 
 app = Flask(__name__)
 # functions_list = [o for o in getmembers(datmo_api_functions) if isfunction(o[1])]
