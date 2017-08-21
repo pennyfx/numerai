@@ -14,7 +14,7 @@ The jupyter notebook explains different steps taken while building the model.
 
 2. We built an XGBoost model over the whole dataset. This gave us a better understanding of important features and provides a score that indicates how useful or valuable each feature was in the construction of the boosted decision trees within the model. The more an attribute is used to make key decisions with decision trees, the higher its relative importance.
 
-3. We use this importance score to perform dimensionality reduction and finally we come down from 21 to 11 features. This improved the accuracy. 
+3. We use this importance score to perform dimensionality reduction and finally we come down from 21 to 4 features. This improved the accuracy. 
 
 4. The last section of code uses a dictionary, which is a possible input for API and prediction is performed using the built model on that data.
 
