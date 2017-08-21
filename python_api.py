@@ -18,9 +18,8 @@ def predict(params):
     loaded_model = pickle.load(open(model_filename, "rb"))
     X = params 
     x_test = pd.DataFrame(X)
-    # only used for final model with trained with lesser dimensions
-    feature_list = ['feature10','feature15','feature16','feature19','feature20','feature21',
-     'feature4','feature6','feature7','feature8','feature9']
+    # only used for final model with trained with fewer dimensions
+    feature_list = ['feature15', 'feature19', 'feature6', 'feature7']
     x_test = x_test[feature_list]
     y_pred = loaded_model.predict(x_test)
     y_pred[y_pred > 0.5] = 1
