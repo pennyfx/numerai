@@ -8,7 +8,7 @@ This is a [Datmo](https://datmo.com) model which is built over numerai dataset.
 
 ## Approach:
 
-The jupyter notebook explains different steps taken while building the model. We got a final validation accuracy of 51.92%.
+The jupyter notebook explains different steps taken while building the model.
 
 1. We perform an exploratory data analysis (EDA) to visualize and explore the feature space. We made specific inference of features having strong positive and negative correlation.
 
