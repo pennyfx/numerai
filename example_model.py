@@ -23,8 +23,8 @@ def main():
     # Set seed for reproducibility
     np.random.seed(0)
 
-    training_data_path = os.path.join(os.environ['DATA_DIR'], 'numerai_training_data.csv')
-    prediction_data_path = os.path.join(os.environ['DATA_DIR'], 'numerai_tournament_data.csv')
+    training_data_path = os.path.join('data', 'numerai_training_data.csv')
+    prediction_data_path = os.path.join('data', 'numerai_tournament_data.csv')
     print("Loading data...")
     # Load the data from the CSV files
     training_data = pd.read_csv(training_data_path, header=0)
@@ -74,11 +74,11 @@ def main():
     # save the classifier
     stats = {"train accuracy": train_acc,"test accuracy":test_acc, 'label':'initial model',}
     # Save the predictions out to a CSV file
-    predictions_path = os.path.join(os.environ['OUTPUT_DIR'], 'predictions.csv')
+    predictions_path = os.path.join(os.environ['DATMO_TASK_DIR'], 'predictions.csv')
     joined.to_csv(predictions_path, index=False)
-    model_filename = os.path.join(os.environ['OUTPUT_DIR'],'model.dat')
+    model_filename = os.path.join(os.environ['DATMO_TASK_DIR'],'model.dat')
     pickle.dump(model, open(model_filename, 'wb'))
-    stats_filename = os.path.join(os.environ['OUTPUT_DIR'],'stats.json')
+    stats_filename = os.path.join(os.environ['DATMO_TASK_DIR'],'stats.json')
     with open(stats_filename, 'wb') as f:
         f.write(json.dumps(stats))
 

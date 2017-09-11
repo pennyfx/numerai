@@ -13,13 +13,13 @@ def add(params):
     return params['a'] + params['b']
 
 def predict(params):
-    model_filename = os.path.join(os.environ['INPUT_SNAPSHOT_DIR'],'model.dat')
+    model_filename = os.path.join(os.getcwd(),'model.dat')
     # load model from file
     loaded_model = pickle.load(open(model_filename, "rb"))
     X = params 
     x_test = pd.DataFrame(X)
     # only used for final model with trained with fewer dimensions
-    feature_list = ['feature15', 'feature19', 'feature6', 'feature7']
+    feature_list = ['feature19', 'feature6', 'feature7']
     x_test = x_test[feature_list]
     y_pred = loaded_model.predict(x_test)
     y_pred[y_pred > 0.5] = 1
