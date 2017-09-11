@@ -1,1 +1,1 @@
-{"model_type": "xgboost", "features": "['feature19' 'feature6' 'feature7']"}
+{"model_type": "xgboost", "features": "['feature10' 'feature12' 'feature15' 'feature16' 'feature19' 'feature4'\n 'feature5' 'feature6' 'feature7' 'feature9']"}
