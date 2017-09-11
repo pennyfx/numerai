@@ -1,6 +1,6 @@
 # Numerai Model
 
-[![Datmo Model](https://beta.datmo.io/shabazp/numerai-model/badge.svg)](https://beta.datmo.io/shabazp/numerai-model)
+[![Datmo Project](https://datmo.io/shabazp/numerai-competition-project/badge.svg)](https://datmo.io/shabazp/numerai-competition-project)
 
 [Numer.ai](https://numer.ai/) is a hedge fund that hosts weekly online competitions for data science model building, allowing data science enthuasists a way to earn money by building models that help to explain phenomena in their sanitized data. A great part about working with Numer.ai data is that it’s already curated for you — no need to deal with wrangling, scraping, or cleaning. This is pretty awesome, as data cleaning is one of the more frustrating/boring parts of machine learning.
 
@@ -29,7 +29,7 @@ Check out the Snapshots tab above for information on snapshots that were taken w
 Clone this model on your local machine with the Datmo CLI
 
 ```
-$ datmo clone https://beta.datmo.io/shabazp/numerai-model
+$ datmo clone https://beta.datmo.io/shabazp/numerai-competition-project
 ```
 
 Now you can run the set of commands below to better understand the advantages of converting a repository to a Datmo model. 
