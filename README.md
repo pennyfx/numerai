@@ -49,12 +49,6 @@ For reference, here are few more quick details about what you can find in the re
 
 ```
 Dockerfile: this is meant to keep track of your environment. For example, this Dockerfile ensures that our environment has all of the requirements needed to run our model. You can manage, edit, and create new enviroments with the datmo env command. Each session you create with datmo will have a default environment associated with it.
-
-_datmo: visible datmo folder where the input information (data, snapshots, misc files) will go.
-
-_datmo/data: we store any data that you might use for the model. In this case, we are pulling data from a remote server and will populate this directory automatically while training. For other models, you will want to use the datmo dataset command to create, manage, or pull datasets from the remote server
-
-_datmo/snapshots: contains weights, statistics and files(visualizations) that are pulled in to be inputs for processing
 ```
 The commands and quick reference above is by no means meant to be comprehensive. Please refer to the [CLI documentation](https://beta-docs.datmo.io) for more details on the various Datmo commands to use and file structures present in Datmo.
 
